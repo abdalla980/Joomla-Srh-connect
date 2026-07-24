@@ -1,32 +1,32 @@
-# Install com_srhconnect in Joomla
+# com_srhconnect
 
-## What this component adds (3 data types)
+Joomla component that powers SRH Connect content: events, ambassadors, and clubs.
 
-| Data type | Table | Admin menu |
-|-----------|-------|------------|
+## Content types
+
+| Type | Table | Admin |
+|------|-------|--------|
 | **Event** | `#__srh_events` | Components → SRH Connect → Events |
 | **Ambassador** | `#__srh_ambassadors` | Components → SRH Connect → Ambassadors |
 | **Club** | `#__srh_clubs` | Components → SRH Connect → Clubs |
 
-These are **content/data types** managed in the CMS backend — not “models” you write for a framework lecture.
-
-## Install steps
+## Install
 
 1. Zip the `com_srhconnect` folder (the folder that contains `srhconnect.xml`).
-2. In Joomla Admin → **System → Install → Extensions** → upload the zip.
-3. Open **Components → SRH Connect** and confirm the three menus / seeded rows.
-4. (Optional) Create a menu item of type **SRH Connect → Events** for the site frontend.
+2. In Joomla Admin go to **System → Install → Extensions** and upload the zip.
+3. Open **Components → SRH Connect** to manage content (sample rows are seeded on install).
+4. Optional: add a menu item for **SRH Connect → Events** on the site.
 
-## JSON for the React frontend
+## API endpoints
 
-After install, if your site is `http://localhost/joomla`:
+If your site root is `http://localhost/joomla`:
 
 - `index.php?option=com_srhconnect&task=api.events`
 - `index.php?option=com_srhconnect&task=api.ambassadors`
 - `index.php?option=com_srhconnect&task=api.clubs`
 
-Point `frontend/.env` `VITE_JOOMLA_API` at your site root.
+Point the React frontend `VITE_JOOMLA_API` env var at that site root.
 
-## Without a live Joomla DB
+## Offline / local frontend
 
-The React frontend already falls back to `../data/content.json` — same three data types — so you can still demo population on screen.
+If Joomla is not running, the React app falls back to `frontend/public/content.json` with the same content shape.

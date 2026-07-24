@@ -1,30 +1,26 @@
-# SRH Connect — Joomla CMS Project
+# SRH Connect (Joomla)
 
-Parallel to `Strapi-Cms`: same ambassador platform idea, **3 data types**, backend + frontend.
+Campus community platform for SRH students — browse events, meet ambassadors, and discover clubs.
 
-## The 3 data types (show these in the video)
+This repository is the **Joomla** implementation: a custom component for structured content, plus a React frontend that displays it.
 
-| # | Data type | Strapi | Joomla (`com_srhconnect`) |
-|---|-----------|--------|---------------------------|
-| 1 | **Event** | Content-Type `Event` | Table `#__srh_events` |
-| 2 | **Ambassador** | Content-Type `Ambassador` | Table `#__srh_ambassadors` |
-| 3 | **Club** | Content-Type `Club` | Table `#__srh_clubs` |
+## Content types
 
-Fabian wants **data types**, not framework “models” — show the CMS admin screens where content structure is defined and where content is entered.
+| Type | Description | Storage |
+|------|-------------|---------|
+| **Event** | Campus and partner events with date, venue, and category | `#__srh_events` |
+| **Ambassador** | Student ambassadors and contact profiles | `#__srh_ambassadors` |
+| **Club** | Student clubs and societies | `#__srh_clubs` |
 
-## Folder map
+## Project structure
 
 ```
-Cms-Project/
-  data/content.json          # seed used by frontend fallback
-  joomla/com_srhconnect/     # installable Joomla component (3 data types + SQL seed)
-  joomla/README.md           # install steps
-  frontend/                  # React app that populates Events / Ambassadors / Clubs
-  VIDEO_SCRIPT.md            # ~3 minute submission script
-  README.md
+data/content.json       Sample content (frontend fallback)
+joomla/com_srhconnect/  Installable Joomla component
+frontend/               React + Vite app
 ```
 
-## Run the Joomla frontend (demo without full Joomla)
+## Frontend
 
 ```bash
 cd frontend
@@ -32,22 +28,18 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5174 — pages load the 3 types from `public/content.json` (same seed as the component SQL).
+Open [http://localhost:5174](http://localhost:5174).
 
-## Connect to a live Joomla site
-
-1. Install Joomla (XAMPP / your existing `Cmsproject` install).
-2. Zip `joomla/com_srhconnect` and install via **System → Extensions**.
-3. In `frontend`, create `.env`:
+By default the app loads sample data from `frontend/public/content.json`. To use a live Joomla backend, set:
 
 ```
-VITE_JOOMLA_API=http://localhost/your-joomla-folder
+VITE_JOOMLA_API=http://localhost/your-joomla-site
 ```
 
-4. Restart `npm run dev`.
+## Joomla component
 
-## Strapi side
+See [joomla/README.md](joomla/README.md) for install steps and API endpoints.
 
-Use your existing project: `Downloads/Strapi-Cms`  
-Backend: `npm run develop` → http://localhost:1337/admin  
-Frontend: `frontend/npm run dev` → Events / Ambassadors / Clubs pages.
+## Related project
+
+The Strapi version of SRH Connect lives at [abdalla980/Srh-Connect](https://github.com/abdalla980/Srh-Connect).
