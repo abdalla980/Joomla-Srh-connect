@@ -1,0 +1,86 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Berlin Inclusive Film Festival",
+      "description": "Films by and about people with disabilities. Audio descriptions, subtitles, and sign language at every screening.",
+      "start_date": "2026-08-15T14:00:00.000Z",
+      "is_free": false,
+      "event_category": "cultural",
+      "venue": "Tempodrom, Berlin"
+    },
+    {
+      "id": 2,
+      "title": "SRH Open Campus Day",
+      "description": "Meet ambassadors, tour the campus, and learn about inclusive study life at SRH Berlin.",
+      "start_date": "2026-09-05T10:00:00.000Z",
+      "is_free": true,
+      "event_category": "academic",
+      "venue": "Aufbau Haus, Berlin"
+    },
+    {
+      "id": 3,
+      "title": "Handic.app Public Launch Event",
+      "description": "Official launch of Handic.app with live demos and panel talks on accessible event booking.",
+      "start_date": "2026-10-17T17:00:00.000Z",
+      "is_free": true,
+      "event_category": "other",
+      "venue": "Humboldt Forum, Berlin"
+    }
+  ],
+  "ambassadors": [
+    {
+      "id": 1,
+      "name": "Elena Müller",
+      "email": "elena.mueller@srh.de",
+      "bio": "Web developer and accessibility advocate. Leads technical workshops for Handic.app.",
+      "nationality": "German",
+      "faculty": "Information & Communication Technology",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Hassan",
+      "email": "ahmed.hassan@srh.de",
+      "bio": "International business ambassador and cultural bridge for partner organisations.",
+      "nationality": "Egyptian",
+      "faculty": "Business & Management",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Sofia Martínez",
+      "email": "sofia.martinez@srh.de",
+      "bio": "Design lead ensuring all ambassador materials meet WCAG accessibility standards.",
+      "nationality": "Spanish",
+      "faculty": "Design & Media Arts",
+      "active": true
+    }
+  ],
+  "clubs": [
+    {
+      "id": 1,
+      "name": "Tech & Innovation Club",
+      "category": "Technology",
+      "meeting_schedule": "Every Wednesday 18:00",
+      "contact_email": "tech@srh-clubs.de",
+      "description": "Hackathons, guest speakers, and project showcases for tech-minded students."
+    },
+    {
+      "id": 2,
+      "name": "Inclusive Arts Collective",
+      "category": "Arts",
+      "meeting_schedule": "Every Friday 17:00",
+      "contact_email": "arts@srh-clubs.de",
+      "description": "Exhibitions and workshops centred on disabled and marginalised voices."
+    },
+    {
+      "id": 3,
+      "name": "SRH Debate Society",
+      "category": "Academic",
+      "meeting_schedule": "Every Tuesday 19:00",
+      "contact_email": "debate@srh-clubs.de",
+      "description": "Public speaking and debate on digital rights, policy, and accessibility."
+    }
+  ]
+}

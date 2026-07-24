@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+  <name>COM_SRHCONNECT</name>
+  <author>Abdalla Izzeldin</author>
+  <version>1.0.0</version>
+  <description>SRH Connect — 3 data types: Event, Ambassador, Club (Joomla side of CMS comparison)</description>
+  <namespace path="src/">Srh\Component\Srhconnect</namespace>
+
+  <install>
+    <sql>
+      <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+      <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+    </sql>
+  </uninstall>
+
+  <files folder="site">
+    <folder>src</folder>
+    <folder>tmpl</folder>
+    <folder>controllers</folder>
+    <filename>controller.php</filename>
+    <filename>srhconnect.php</filename>
+  </files>
+
+  <administration>
+    <menu>COM_SRHCONNECT</menu>
+    <submenu>
+      <menu link="option=com_srhconnect&amp;view=events">Events</menu>
+      <menu link="option=com_srhconnect&amp;view=ambassadors">Ambassadors</menu>
+      <menu link="option=com_srhconnect&amp;view=clubs">Clubs</menu>
+    </submenu>
+    <files folder="admin">
+      <folder>services</folder>
+      <folder>src</folder>
+      <folder>sql</folder>
+      <folder>tmpl</folder>
+      <filename>srhconnect.php</filename>
+    </files>
+  </administration>
+</extension>
