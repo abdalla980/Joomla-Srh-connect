@@ -30,15 +30,29 @@ npm run dev
 
 Open [http://localhost:5174](http://localhost:5174).
 
-By default the app loads sample data from `frontend/public/content.json`. To use a live Joomla backend, set:
+The app reads live data from the Joomla site via `VITE_JOOMLA_API` (see `frontend/.env.example`). In local Laragon setups that is usually:
 
 ```
-VITE_JOOMLA_API=http://localhost/your-joomla-site
+VITE_JOOMLA_API=http://localhost/joomla
 ```
+
+API endpoints:
+
+- `/index.php?option=com_srhconnect&task=api.events`
+- `/index.php?option=com_srhconnect&task=api.ambassadors`
+- `/index.php?option=com_srhconnect&task=api.clubs`
 
 ## Joomla component
 
-See [joomla/README.md](joomla/README.md) for install steps and API endpoints.
+See [joomla/README.md](joomla/README.md) for install steps.
+
+With Laragon, the site typically lives at `C:\laragon\www\joomla` and is served at [http://localhost/joomla](http://localhost/joomla). Admin: [http://localhost/joomla/administrator](http://localhost/joomla/administrator).
+
+Database tables (prefix may differ):
+
+- `*_srh_events`
+- `*_srh_ambassadors`
+- `*_srh_clubs`
 
 ## Related project
 
