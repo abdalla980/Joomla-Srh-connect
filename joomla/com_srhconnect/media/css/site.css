@@ -1,0 +1,26 @@
+.srh-connect { max-width: 1100px; margin: 0 auto; }
+.srh-hero {
+  background: linear-gradient(135deg, #0b3d91, #1e3a5f);
+  color: #fff; padding: 2.5rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+}
+.srh-hero h1 { margin: 0 0 .5rem; font-size: 2rem; }
+.srh-section { margin-bottom: 2.5rem; }
+.srh-section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.srh-section-head a { font-weight: 600; }
+.srh-intro { color: #64748b; margin-bottom: 1.25rem; }
+.srh-intro code { background: #e2e8f0; padding: .1rem .4rem; border-radius: 4px; }
+.srh-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.srh-list { display: grid; gap: 1rem; }
+.srh-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.1rem 1.2rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, .04);
+}
+.srh-card h2, .srh-card h3 { margin: .4rem 0 .5rem; font-size: 1.15rem; }
+.srh-meta { color: #64748b; font-size: .92rem; }
+.srh-badge {
+  display: inline-block; background: #e8eef8; color: #0b3d91; font-size: .75rem; font-weight: 700;
+  padding: .2rem .55rem; border-radius: 999px; text-transform: capitalize; margin-right: .35rem;
+}
+.srh-badge.free { background: #dcfce7; color: #166534; }
+.srh-badge.paid { background: #fee2e2; color: #991b1b; }
+.srh-badges { margin-bottom: .35rem; }

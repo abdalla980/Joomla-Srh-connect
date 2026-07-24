@@ -1,38 +1,36 @@
 # com_srhconnect
 
-Joomla component that powers SRH Connect content: events, ambassadors, and clubs.
+Classic Joomla component for SRH Connect.
 
-## Content types
+## What it does
 
-| Type | Table (Laragon prefix `dvfnb_`) | Admin |
-|------|----------------------------------|--------|
-| **Event** | `dvfnb_srh_events` | Components → SRH Connect |
-| **Ambassador** | `dvfnb_srh_ambassadors` | Components → SRH Connect |
-| **Club** | `dvfnb_srh_clubs` | Components → SRH Connect |
+1. Creates **3 MySQL tables** (Event, Ambassador, Club)  
+2. Shows them in **Joomla admin** list screens  
+3. Renders them on the **Joomla website** via site views + menu items  
+
+This is not a headless setup — the public pages are normal Joomla site pages.
+
+## Tables
+
+| Type | Table |
+|------|--------|
+| Event | `#__srh_events` (`dvfnb_srh_events` on Laragon) |
+| Ambassador | `#__srh_ambassadors` |
+| Club | `#__srh_clubs` |
+
+## Site pages
+
+- `index.php?option=com_srhconnect&view=home`
+- `index.php?option=com_srhconnect&view=events`
+- `index.php?option=com_srhconnect&view=ambassadors`
+- `index.php?option=com_srhconnect&view=clubs`
+
+## Admin
+
+Components → **SRH Connect** → Events / Ambassadors / Clubs
 
 ## Install
 
-1. Zip the `com_srhconnect` folder (the folder that contains `srhconnect.xml`).
-2. In Joomla Admin go to **System → Install → Extensions** and upload the zip.
-3. Open **Components → SRH Connect** to manage content (sample rows are seeded on install).
-4. Optional: add a menu item for **SRH Connect → Events** on the site.
-
-On Laragon this project is already installed under `C:\laragon\www\joomla`.
-
-## API endpoints
-
-Site root `http://localhost/joomla`:
-
-- `index.php?option=com_srhconnect&task=api.events`
-- `index.php?option=com_srhconnect&task=api.ambassadors`
-- `index.php?option=com_srhconnect&task=api.clubs`
-
-The React frontend uses a Vite proxy in development (`/joomla-api` → Joomla) so it loads live data without CORS issues.
-
-## Database (HeidiSQL)
-
-Laragon → **Database** → open `joomla` → tables above.
-
-## Offline / local frontend
-
-If the API is unreachable, the React app falls back to `frontend/public/content.json`.
+1. Zip `com_srhconnect` (folder containing `srhconnect.xml`)  
+2. Joomla Admin → System → Install → Extensions  
+3. Create menu items of type SRH Connect → Home / Events / Ambassadors / Clubs  

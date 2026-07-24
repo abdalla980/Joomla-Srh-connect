@@ -5,5 +5,5 @@ use Joomla\CMS\MVC\Controller\BaseController;
 
 class SrhconnectController extends BaseController
 {
-    protected $default_view = 'home';
+    protected $default_view = 'srhconnect';
 }

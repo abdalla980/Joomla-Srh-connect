@@ -1,85 +1,67 @@
 # Video script (~3 minutes) — Strapi + Joomla
 
-Private recording notes for the CMS comparison video. Keep under 3 minutes.
+Recording notes. Keep under 3 minutes.
 
-## What to have open before you start
+## Open before recording
 
 | Window | URL |
 |--------|-----|
 | Strapi admin | http://localhost:1337/admin |
-| Strapi frontend | http://localhost:5176 (or your Vite port) |
+| Strapi frontend | http://localhost:5173 |
 | Joomla admin | http://localhost/joomla/administrator/ |
-| Joomla frontend | http://localhost:5174 |
+| Joomla **site** frontend | http://localhost/joomla/ |
 | HeidiSQL (optional) | Laragon → Database |
 
-**Joomla login:** username `admin` · password `TempPass123!`
+**Joomla login:** `admin` / `TempPass123!`
 
 ---
 
 ## 0:00–0:15 · Intro
 
-> “I built SRH Connect in two CMS platforms: Strapi and Joomla. I’ll show three data types — Event, Ambassador, and Club — in each backend, then how the frontend displays them.”
+> “I built SRH Connect in Strapi and Joomla with the same three data types: Event, Ambassador, and Club. Strapi is headless with a React frontend. Joomla uses real database tables and renders them in the normal Joomla website.”
 
 ---
 
-## 0:15–1:10 · Strapi backend
+## 0:15–1:05 · Strapi backend + frontend
 
-1. Open http://localhost:1337/admin  
-2. **Content-Type Builder** → click **Event**, then **Ambassador**, then **Club** (show fields briefly)  
-3. Optional 10s: **Content Manager** → open one Event entry  
+1. Strapi admin → **Content-Type Builder** → Event, Ambassador, Club  
+2. Strapi React app → Events / Ambassadors / Clubs  
 
-> “In Strapi, data types are Content-Types. Event, Ambassador, and Club each have their own fields, and the API is generated automatically.”
-
----
-
-## 1:10–1:40 · Strapi frontend
-
-1. Open the Strapi React app  
-2. Click **Events**, **Ambassadors**, **Clubs**  
-
-> “The frontend fetches each type from Strapi’s REST API and renders it in the browser.”
+> “Strapi defines content types in the admin and exposes an API. A separate React app consumes that API.”
 
 ---
 
-## 1:40–2:25 · Joomla backend
+## 1:05–2:10 · Joomla backend (real tables)
 
-1. Open http://localhost/joomla/administrator/ — sign in with `admin` / `TempPass123!`  
-2. Show **Components → SRH Connect** (or the SRH Connect menu item)  
-3. Optional: HeidiSQL → database `joomla` → tables  
-   - `dvfnb_srh_events`  
-   - `dvfnb_srh_ambassadors`  
-   - `dvfnb_srh_clubs`  
+1. Login to http://localhost/joomla/administrator/  
+2. **Components → SRH Connect** — show dashboard with 3 data types  
+3. Open **Events**, **Ambassadors**, **Clubs** list screens  
+4. Optional: HeidiSQL → database `joomla` →  
+   `dvfnb_srh_events`, `dvfnb_srh_ambassadors`, `dvfnb_srh_clubs`  
 
-> “In Joomla the same three data types live in the SRH Connect component and these three tables. Content is managed in the CMS and exposed through a small JSON API.”
-
----
-
-## 2:25–2:50 · Joomla frontend
-
-1. Open http://localhost:5174  
-2. Click **Events**, **Ambassadors**, **Clubs**  
-
-> “This frontend loads live data from the Joomla API — same three types as Strapi.”
-
-Quick proof (optional): change an event title in HeidiSQL or admin, refresh the React Events page.
+> “In Joomla these are real MySQL tables managed inside the CMS component — not a headless API-only setup.”
 
 ---
 
-## 2:50–3:00 · Differences
+## 2:10–2:45 · Joomla site frontend (Cassiopeia)
 
-> “Strapi is headless: you define content types and get an API by default. Joomla is a full CMS: the same data types sit in a component’s tables and can also feed a separate frontend. Strapi was faster for custom types; Joomla fits classic site administration and roles. Both deliver Event, Ambassador, and Club to the web.”
+1. Open http://localhost/joomla/  
+2. Use menu: **SRH Connect**, **Events**, **Ambassadors**, **Clubs**  
+3. Show that event titles from the database appear in the Joomla template  
 
-End on your name + both GitHub repos.
+> “The Joomla frontend is the CMS website itself. Views read the tables and render HTML in the Cassiopeia template.”
+
+Optional proof: change an event title in the admin/HeidiSQL, refresh the Events menu page.
 
 ---
 
-## Don’t show
+## 2:45–3:00 · Differences
 
-- PHP model class code  
-- Long debugging  
-- Assignment briefings or lecturer names  
+> “Strapi is headless: content types plus API, custom React UI. Joomla is a classic CMS: the same three data types live in tables and are shown through Joomla menus and site views. Same project content, different architecture.”
+
+Repos: your name + GitHub links.
 
 ## Repos
 
-- Strapi: https://github.com/abdalla980/Srh-Connect  
-- Joomla: https://github.com/abdalla980/Joomla-Srhconnect  
+- https://github.com/abdalla980/Srh-Connect  
+- https://github.com/abdalla980/Joomla-Srhconnect  
